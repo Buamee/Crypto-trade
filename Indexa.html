@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BUETEN-NG</title>
+  <link rel="stylesheet" href="../stylea.css ">
+  <script type="text/javascript">
+    function validateForm() {
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var username = document.getElementById("username").value;
+      var country = document.getElementById("country").value;
+      var telephoneNumber = document.getElementById("telephoneNumber").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      var humanVerification = document.getElementById("humanVerification").checked;
+
+      if (firstName == "" || lastName == "" || username == "" || country == "" || telephoneNumber == "" || email == "" || password == "" || confirmPassword == "" || !humanVerification) {
+        alert("Please fill in all fields and check the human verification checkbox.");
+        return false;
+      }
+
+      if (password != confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <div class="body">
+  <div class="header">
+  <h1>BUETEN-NG</h1>
+  </div> 
+  <div class="formcontainer">
+ <center> <form onsubmit="return validateForm()" action="https://example.com/register.php" method="post">
+    <label for="firstName">First Name:</label><br>
+    <input type="text" id="firstName">
+    <br>
+    <label for="lastName">Last Name:</label><br>
+    <input type="text" id="lastName">
+    <br>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username">
+    <br>
+    <label for="country">Country:</label><br>
+    <select id="country"><br>
+      <option value="Cameroon">Cameroon</option>
+      <option value="Central African Republic">Central African Republic</option>
+      <option value="Chad">Chad</option>
+      <option value="Congo">Congo</option>
+      <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+      <option value="Equatorial Guinea">Equatorial Guinea</option>
+      <option value="Gabon">Gabon</option>
+      <option value="São Tomé and Príncipe">São Tomé and Príncipe</option>
+    </select>
+    <br>
+    <label for="telephoneNumber">Telephone Number:</label><br>
+    <input placeholder="+237" type="tel" id="telephoneNumber">
+    <br>
+    <label for="email">Email:</label><br>
+    <input placeholder="example@gmail.com" type="email" id="email">
+    <br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password">
+    <br>
+    <label for="confirmPassword">Confirm Password:</label><br>
+    <input type="password" id="confirmPassword">
+    <br>
+    <input type="checkbox" id="humanVerification"><br>
+    <label for="humanVerification">I am not a robot.</label><br>
+    <br>
+    <input type="submit" value="Register">
+          <p>have an account already?</p>
+        <a href="indexb.html">login</a>
+      </center>
+    </form>
+   </div> 
+  </div> 
+ </body>
+</html>
